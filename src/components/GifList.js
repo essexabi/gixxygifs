@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import "../Styles/GifList.scss";
 
 import { Link } from "wouter";
-import ModeContext from "./context/ModeContext";
-import GifContext from "./context/GifContext";
+import useGlobalMode from "./hooks/useGlobalMode";
+import useGlobalGif  from "./hooks/useGlobalGif";
 
 import Logo from "./Logo";
 
 function GifList(props) {
-    const { adultMode } = useContext(ModeContext);
-    const { gifs } = useContext(GifContext);
+    const gifs = useGlobalGif();
+    const adultMode = useGlobalMode();
     console.log(adultMode);
     const link = "/gif/";
     return (
