@@ -1,0 +1,36 @@
+
+
+.logoLink {
+    text-decoration: none;
+    color: white;
+    transition: 500ms;
+    font-size: 50px;
+    margin-bottom: 10px;
+
+    span {
+        font-size: 30px;
+        margin-left: 0px;
+        color: tomato;
+        transition: 500ms;
+    
+    }
+
+}
+
+
+
+.logoLink:hover span {
+    font-size: 48px;
+    transition: 500ms;
+    color: white;
+
+}
+
+.logoLink:hover {
+    color: tomato;
+    transition: 500ms;
+
+
+}
+
+

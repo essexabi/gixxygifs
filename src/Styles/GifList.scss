@@ -1,0 +1,139 @@
+.GifList {
+
+  display: flex;
+  flex-wrap: wrap;
+  --height: 180;
+  /* Minimal row height */
+  --ratio: 1;
+  /* Default aspect ratio for photos that are not loaded yet */
+
+
+  .GifItem, .GifItem:first-child{
+    flex: calc(var(--height) / var(--ratio));
+    min-width: calc(var(--height) / var(--ratio)*1px);
+    margin: 2px;
+    font-size: 0;
+  }
+
+
+
+  .GifItemImage {
+    width: 100%;
+    height: auto;
+  }
+
+
+}
+
+
+
+
+
+@media (min-width: 1000px) {
+
+  .GifItemImage {
+    transition: 300ms;
+  }
+
+  .GifItemImage:hover {
+    transform: scale(1.5);
+    position: relative;
+  }
+
+
+
+}
+
+@media (min-width: 850px) {
+
+  .GifList {
+    --height: 260;
+  }
+
+
+
+  .GifItemImage {
+    transition: 300ms;
+  }
+
+  .GifItemImage:hover {
+    transform: scale(2.5);
+    position: relative;
+    box-shadow: 0px 10px 30px black;
+  }
+
+}
+
+@media (min-width: 600px) {
+  .logo {
+    display: none;
+  }
+
+  .GifItemImage {
+    transition: 300ms;
+  }
+
+  .GifItemImage:hover {
+    transform: scale(1.3);
+    position: relative;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  
+  .logo {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    top: 0px;
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    background: rgb(34, 193, 195);
+    background: -moz-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(4, 4, 4, 0.8871681415929203) 246%);
+    background: -webkit-linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(4, 4, 4, 0.8871681415929203) 246%);
+    background: linear-gradient(0deg, rgba(34, 193, 195, 0) 0%, rgba(4, 4, 4, 0.8871681415929203) 246%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3", endColorstr="#040404", GradientType=1);
+
+    .logoLink {
+      font-size: 80px;
+
+      span {
+        font-size: 35px;
+      }
+
+
+    }
+
+    .logoLink:hover {
+      span {
+        font-size: 80px;
+
+      }
+    }
+
+  }
+
+
+  .GifItem:first-child {
+
+
+    width: 100%;
+    --height: auto;
+    overflow: hidden;
+    img{
+      min-height: 300px;
+      width: 100%;
+    }
+
+
+  }
+
+
+
+
+}

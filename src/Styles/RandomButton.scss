@@ -1,0 +1,50 @@
+.randomButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    width: 50px;
+    display: flex;
+    height: 50px;
+    color: tomato;
+    border-radius: 50%;
+    border: none;
+    font-size: 45px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    transition: 500ms;
+
+
+    .random {
+
+        text-decoration: none;
+        opacity: 0.7;
+
+        img {
+            width: 35px;
+        
+        }
+    }
+
+}
+
+.randomButton:hover {
+    transition: 500ms;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 600px) {
+
+    .randomButton {
+        position: fixed;
+        bottom: 3vh;
+        right: 45vw;
+        background-color: rgba(20, 20, 27, 0.5);
+        margin-top: 0px;
+        z-index: 2;
+
+
+    }
+
+}
