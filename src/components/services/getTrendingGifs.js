@@ -1,9 +1,9 @@
-const apiKey = "E3KMC1SQpG1QzsBzwluhO0A7NK81WdvM";
+import {API_KEY, API_URL} from "./settings";
 
 export default function getTrendingGifs(adultMode) {
     const rating = !adultMode ? "g" : "r"
     const apiURL =
-    `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}&limit=25&rating=${rating}`;
+    `${API_URL}/trending?api_key=${API_KEY}&limit=25&rating=${rating}`;
     return fetch(apiURL)
         .then((res) => res.json())
         .then((response) => {
