@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { Route } from "wouter";
 import "./Styles/App.scss";
 
-import { ModeContextProvider } from "./components/context/ModeContext";
-import { GifContextProvider } from "./components/context/GifContext";
-import Home from "./pages/Home";
-import Search from "./pages/Search";
-import Detail from "./pages/Detail";
-import NavBar from "./components/NavBar";
+import { ModeContextProvider } from "context/ModeContext";
+import { GifContextProvider } from "context/GifContext";
+import Home from "pages/Home";
+import Search from "pages/Search";
+import Detail from "pages/Detail";
+import NavBar from "components/NavBar";
 
 function App() {
     return (

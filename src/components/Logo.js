@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 
-import "../Styles/Logo.scss"
+import "Styles/Logo.scss"
 const Logo = () => {
     return (
         <div className="logo">         

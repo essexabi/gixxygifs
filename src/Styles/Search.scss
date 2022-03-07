@@ -1,0 +1,27 @@
+
+
+.Search{
+    width: 100%;
+    display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+    .ListTitle {
+        padding-top: 180px;
+        text-align: center;
+        width: 80%;
+      
+        h1 {
+          font-weight: lighter;
+          font-size: 50px;
+        }
+    }
+    
+    @media (min-width: 600px) {
+    
+        .ListTitle {
+            padding-top: 80px;
+        }
+        
+    }
+
+}

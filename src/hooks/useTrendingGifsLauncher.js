@@ -1,9 +1,9 @@
 import {useEffect, useState, useContext} from "react";
 
-import ModeContext from "../context/ModeContext";
-import GifContext from "../context/GifContext";
+import ModeContext from "context/ModeContext";
+import GifContext from "context/GifContext";
 
-import getTrendingGifs from "../../components/services/getTrendingGifs";
+import getTrendingGifs from "services/getTrendingGifs";
 
 export default function useTrendingGifsLauncher(){
 

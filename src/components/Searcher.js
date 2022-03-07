@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "wouter";
-import searchPng from "./images/search.png";
-import "../Styles/Searcher.scss";
+import searchPng from "images/search.png";
+import "Styles/Searcher.scss";
 const Searcher = () => {
     const [keyword, setKeyword] = useState("");
     const [currentPath, toPath]  = useLocation();

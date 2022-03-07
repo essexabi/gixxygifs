@@ -1,10 +1,10 @@
 import React from "react";
 
-import "../Styles/GifList.scss";
+import "Styles/GifList.scss";
 
 import { Link } from "wouter";
-import useGlobalMode from "./hooks/useGlobalMode";
-import useGlobalGif  from "./hooks/useGlobalGif";
+import useGlobalMode from "hooks/useGlobalMode";
+import useGlobalGif from "hooks/useGlobalGif";
 
 import Logo from "./Logo";
 
@@ -16,29 +16,28 @@ function GifList(props) {
     return (
         <>
             <Logo />
+            <div className="ListTitle"><h1>{decodeURI(props.listTitle)}</h1></div>
 
             <div className="GifList" id="GifList">
-
-
-
                 {gifs.map(({ id, title, url, height, width }) => (
-                    <div
-                        className="GifItem"
-                        key={id}
-                        style={{ "--ratio": height / width }}
-                    >
-
-                        <Link to={link.concat(id)}>
-                            <a className="active">
-                                <img
-                                    loading="lazy"
-                                    className="GifItemImage"
-                                    src={url}
-                                    alt={title}
-                                />
-                            </a>
-                        </Link>
-                    </div>
+                    <>
+                        <div
+                            className="GifItem"
+                            key={id}
+                            style={{ "--ratio": height / width }}
+                        >
+                            <Link to={link.concat(id)}>
+                                <a className="active">
+                                    <img
+                                        loading="lazy"
+                                        className="GifItemImage"
+                                        src={url}
+                                        alt={title}
+                                    />
+                                </a>
+                            </Link>
+                        </div>
+                    </>
                 ))}
             </div>
         </>

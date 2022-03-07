@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "wouter";
 
 import "../Styles/RandomButton.scss"
-import generateTags from "./services/generateTags";
-import randomPng from "./images/random.png";
+import generateTags from "services/generateTags";
+import randomPng from "images/random.png";
 
 
 const RandomButton = () => {

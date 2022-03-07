@@ -1,0 +1,57 @@
+.TrendingSearchs{
+    padding-top: 180px;
+    
+    
+}
+
+.TrendingSearchs-title {
+    color: white;
+    font-weight:lighter;
+    text-align: center;
+
+}
+
+.TrendingSearchs-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-position:inside;
+    padding-inline-start: 5%;
+    padding-inline-end: 5%;
+    list-style-type:none;
+    line-height: 25px;
+    li{
+        
+            list-style-type: none;
+    }
+
+    
+}
+
+.TrendingSearchs-link {
+    color: white;
+    font-size: .6em;
+    padding: .5em;
+    transition: color ease-in .1s;
+    text-decoration: none;
+}
+
+.TrendingSearchs-link:hover {
+    color: tomato;
+}
+
+@media screen and (min-width: 600px) {
+    .TrendingSearchs{
+        padding-top: 150px;
+    }
+    .TrendingSearchs-list {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+    .TrendingSearchs-list li::before {
+        color: tomato;
+        margin-right: .5em;
+        font-size: 1em;
+    }
+}

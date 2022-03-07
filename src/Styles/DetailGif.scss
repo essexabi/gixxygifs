@@ -1,3 +1,7 @@
+.logo {
+    display: none;
+}
+
 .DetailGif {
     display: flex;
     flex-direction: column;
@@ -7,9 +11,7 @@
     margin-top: 150px;
     margin-bottom: 150px;
 
-    .logo {
-        display: none;
-    }
+    
 
 }
 
@@ -49,40 +51,13 @@
 }
 
 @media (max-width: 600px) {
+    .logo{
+        display: flex;
+    }
 
     .DetailGif {
 
-        margin-top: 100px;
-
-
-
-        .logo {
-            display: flex;
-            justify-content: center;
-            margin-top: 0px;
-            width:40vw;
-            background: transparent;
-            position: fixed;
-            bottom: 3vh;
-            right: 0vw;
-            height: auto;
-
-            .logoLink {
-                font-size: 30px;
-
-                span {
-                    font-size: 12px;
-                }
-            }
-
-            .logoLink:hover span {
-
-
-                font-size: 30px;
-
-            }
-
-        }
+        margin-top: 180px;
 
         h1 {
             max-width: 92%;;

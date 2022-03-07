@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/NavBar.scss";
+import "Styles/NavBar.scss";
 import Logo from "./Logo";
 import ModeToggle from "./ModeToggle"
 import Searcher from "./Searcher";

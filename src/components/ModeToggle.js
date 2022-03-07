@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 
-import ModeContext from "./context/ModeContext";
+import ModeContext from "context/ModeContext";
 
 import Toggle from "react-toggle";
-import "../Styles/ModeToggle.scss";
+import "Styles/ModeToggle.scss";
 
 const ModeToggle = () => {
 

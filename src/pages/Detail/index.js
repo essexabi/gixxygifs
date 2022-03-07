@@ -1,10 +1,10 @@
 import React from "react";
 
-import "../../Styles/DetailGif.scss";
+import "Styles/DetailGif.scss";
 
-import useGlobalGif  from "../../components/hooks/useGlobalGif";
+import useGlobalGif  from "hooks/useGlobalGif";
 
-import Logo from "../../components/Logo";
+import Logo from "components/Logo";
 
 export default function Detail({ params }) {
     console.log(params.id);
@@ -15,14 +15,14 @@ export default function Detail({ params }) {
 
     return (
         
-            
+        <>    
+            <Logo />
             <div className="DetailGif">
-                <Logo />
 
                 <h1 style={{ color: "white" }}>{gif.title}</h1>
                 <img src={gif.url} alt={gif.title} />
 
             </div>
-        
+            </>
     );
 }
