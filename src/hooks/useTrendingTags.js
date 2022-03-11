@@ -6,7 +6,8 @@ export default function useTrendingTags() {
 
     useEffect(() => {
         getTrendingTags()
-            .then(setTrends)
+            .then(setTrends);
+        return () => setTrends([])
     }, [])
 
     return trends

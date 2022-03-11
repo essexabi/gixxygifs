@@ -9,8 +9,12 @@ import Categories from "components/Categories";
 export default function Home() {
     const { loading, gifs } = useTrendingGifsLauncher();
 
-    if (loading) return <LoadSpinner />;
+    window.scrollTo(0, 0);
+
+    if (loading)  return <LoadSpinner />;
+
     return (
+        
         <div className="Home">
             <TrendingSearches />
             <GifList gifs={gifs} listTitle="Trending GIFs" />

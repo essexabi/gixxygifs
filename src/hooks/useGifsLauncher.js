@@ -15,6 +15,9 @@ export default function useGifsLauncher({ keyword }) {
             setGifs(gifs);
             setLoading(false);
         });
+
+
+
     }, [keyword, adultMode, setGifs]);
 
     return { loading, gifs, keyword };

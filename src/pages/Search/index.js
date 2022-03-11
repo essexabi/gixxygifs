@@ -11,6 +11,8 @@ function Search({ params, value }) {
     const { loading, gifs } = useGifsLauncher({ keyword });
     if (loading) return <LoadSpinner />;
 
+    window.scrollTo(0, 0);
+
     return (
         <>
             <div className="Search">

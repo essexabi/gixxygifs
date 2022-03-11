@@ -20,24 +20,26 @@ function GifList(props) {
 
             <div className="GifList" id="GifList">
                 {gifs.map(({ id, title, url, height, width }) => (
-                    <>
+                    
                         <div
                             className="GifItem"
-                            key={id}
                             style={{ "--ratio": height / width }}
+                            key={id}
                         >
-                            <Link to={link.concat(id)}>
+                            <Link to={link.concat(id)} >
                                 <a className="active">
                                     <img
                                         loading="lazy"
                                         className="GifItemImage"
                                         src={url}
                                         alt={title}
+                                        key={id+"img"}
+
                                     />
                                 </a>
                             </Link>
                         </div>
-                    </>
+                    
                 ))}
             </div>
         </>
