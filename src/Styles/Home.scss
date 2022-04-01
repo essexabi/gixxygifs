@@ -1,17 +1,279 @@
+@import url("Styles/GifList.scss");
 
-.Home{
+.Home {
 
     width: 100%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 
-    .ListTitle{
-        padding-top: 0px;
-    }
-    .TrendingSearchs-title{
-        padding-top: 20px;
+    .GifList {
+        width: 100%;
+        padding-bottom: 60px;
+        display: flex;
+
+        justify-content: center;
+        flex-wrap: wrap;
+
+        --height: 120;
+        /* Minimal row height */
+        --ratio: 1;
+        /* Default aspect ratio for photos that are not loaded yet */
+        padding-top: 0px !important;
+
+        .ListTitle {
+            padding-top: 0px !important;
+        }
+
+        .GifItem {
+            flex: calc(var(--height) / var(--ratio));
+            min-width: calc(var(--height) / var(--ratio)*1px);
+            margin: 10px;
+            transition: 300ms;
+
+
+
+            .GifItemImage {
+                width: 100%;
+                height: auto;
+
+
+
+            }
+
+
+        }
+
+
+
+        .pagination {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+
+            button {
+                width: 180px;
+                height: 40px;
+                background-color: transparent;
+                color: white;
+                font-size: 15px;
+                font-weight: 100!important;
+
+                border: 0.2px solid white;
+                border-radius: 5px 5px 5px 5px;
+                padding-bottom: 2px;
+                transition: 500ms;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                    border: 0.5px solid black;
+                    transition: 500ms;
+
+
+
+                }
+
+            }
+        }
+
+
     }
 
-    
+    .Categories {
+        width: 100%;
+        padding-top: 25px;
+    }
+
+
+
+    .TrendingSearches {
+        padding-bottom: 60px;
+        width: 100%;
+
+        .TrendingSearches-title {
+            padding-top: 160px;
+            font-size: 50px;
+        }
+    }
+
+
+
+}
+
+@media (min-width: 990px) {
+    .Home {
+
+        .TrendingSearches {
+            width: 80%;
+        }
+
+        .GifList {
+            --height: 200;
+        }
+
+
+    }
+
+}
+
+@media (min-width: 936px)and (max-width: 989px) {
+    .Home {
+        .GifList {
+            --height: 190;
+        }
+    }
+
+}
+
+@media (min-width: 886px)and (max-width: 935px) {
+    .Home {
+        .GifList {
+            --height: 210;
+        }
+    }
+
+}
+
+@media (min-width: 830px) and (max-width: 885px) {
+    .Home {
+        .GifList {
+            --height: 200;
+        }
+    }
+
+}
+
+
+@media (min-width: 750px) and (max-width: 829px) {
+
+    .Home {
+        .GifList {
+            --height: 190;
+        }
+    }
+}
+
+@media (min-width: 680px) and (max-width: 749px) {
+
+    .Home {
+        .GifList {
+            --height: 180;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+
+    .Home {
+        .GifList {
+            --height: 140;
+        }
+
+
+    }
+}
+
+
+@media (min-width: 640px) {
+    .Home {
+
+
+        .GifList {
+
+            padding-top: 0px;
+            padding-bottom: 0px !important;
+
+
+
+        }
+
+
+
+        .SearchAndCategories {
+            width: 100%;
+            padding-top: 100px;
+
+        }
+
+        .TrendingSearches {
+
+            width: 100%;
+
+            .TrendingSearches-link {
+                font-size: 20px;
+            }
+
+        }
+
+
+    }
+
+}
+
+
+
+@media (max-width: 640px) {
+    .Home {
+        .TrendingSearches {
+            padding-top: 100px;
+            padding-bottom: 0px;
+        }
+
+        .GifList {
+            padding-top: 50px !important;
+        }
+
+        .SearchAndCategories {
+            width: 100%;
+            padding-top: 25px;
+
+        }
+
+        .logo {
+            display: flex;
+            padding-top: 50px !important;
+
+            .logoLink {
+                text-decoration: none;
+                color: white;
+                transition: 500ms;
+                font-size: 80px !important;
+                padding-bottom: 10px;
+
+                span {
+                    font-size: 50px !important;
+                    margin-left: 0px;
+                    color: tomato;
+                    transition: 500ms;
+
+                }
+
+            }
+
+
+
+            .logoLink:hover span {
+                font-size: 78px !important;
+                transition: 500ms;
+                color: white;
+
+            }
+
+            .logoLink:hover {
+                color: tomato;
+                transition: 500ms;
+
+
+            }
+
+        }
+    }
+}
+
+@media (min-width: 680px) {
+    .Home {
+        width: 94%;
+    }
 }

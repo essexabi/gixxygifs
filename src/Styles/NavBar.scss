@@ -17,15 +17,23 @@
         width: 170px;
         color: white;
         line-height: 50px;
-        text-align: left;
+        justify-content:flex-start;
         align-items: center;
     }
 
 }
 
+@media (min-width: 640px){
+    .header-wrapper-outer{
+        background: rgb(34,193,195);
+background: -moz-linear-gradient(0deg, rgba(34,193,195,0) 0%, rgba(4,4,4,1) 210%);
+background: -webkit-linear-gradient(0deg, rgba(34,193,195,0) 0%, rgba(4,4,4,1) 210%);
+background: linear-gradient(0deg, rgba(34,193,195,0) 0%, rgba(4,4,4,1) 210%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#22c1c3",endColorstr="#040404",GradientType=1);
+    }
+}
 
-
-@media (max-width: 600px){
+@media (max-width: 640px){
     .header-wrapper-outer{
         background-color: transparent;
         .logo{

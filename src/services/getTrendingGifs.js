@@ -1,9 +1,11 @@
 import {API_KEY, API_URL} from "./settings";
 
-export default function getTrendingGifs(adultMode) {
-    const rating = !adultMode ? "g" : "r"
+export default function getTrendingGifs({adultMode = false, page = 0, limit=20} = {}) {
+    const rating = !adultMode ? "g" : "r";
+    
+
     const apiURL =
-    `${API_URL}/gifs/trending?api_key=${API_KEY}&limit=25&rating=${rating}`;
+    `${API_URL}/gifs/trending?api_key=${API_KEY}&limit=${limit}&offset=${page*limit}&rating=${rating}`;
     return fetch(apiURL)
         .then((res) => res.json())
         .then((response) => {

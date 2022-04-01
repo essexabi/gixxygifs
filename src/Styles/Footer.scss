@@ -1,0 +1,24 @@
+.Footer {
+
+    width: 100%;
+    display: inline-flex;
+    justify-content:center;
+    .Footer-logo {
+        width: 50%;
+
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        h2 {
+            color: tomato;
+            font-weight: 100;
+            small{
+                color: white;
+                font-size: small;
+            }
+        }
+
+
+    }
+
+}

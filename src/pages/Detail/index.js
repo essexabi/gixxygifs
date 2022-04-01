@@ -15,6 +15,8 @@ export default function Detail({ params }) {
 
     const gif = gifs.find((gif) => gif.id === params.id);
     
+    window.scrollTo(0, 0);
+
     
     return (
         <>

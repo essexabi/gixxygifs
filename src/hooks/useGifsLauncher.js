@@ -4,14 +4,17 @@ import getGifs from "services/getGifs";
 import ModeContext from "context/ModeContext";
 import GifContext from "context/GifContext";
 
-export default function useGifsLauncher({ keyword }) {
+const INITIAL_PAGE = 0;
+export function useGifsLauncher({ keyword }) {
     const [loading, setLoading] = useState(false);
+    const [loadingNextPage, setLoadingNextPage] = useState(false);
+    const [page, setPage] = useState(INITIAL_PAGE);
     const { gifs, setGifs } = useContext(GifContext);
     const { adultMode } = useContext(ModeContext);
 
     useEffect(() => {
         setLoading(true);
-        getGifs({ keyword }, adultMode).then((gifs) => {
+        getGifs({ keyword, adultMode }).then((gifs) => {
             setGifs(gifs);
             setLoading(false);
         });
@@ -20,5 +23,19 @@ export default function useGifsLauncher({ keyword }) {
 
     }, [keyword, adultMode, setGifs]);
 
-    return { loading, gifs, keyword };
+    useEffect(()=>{
+        
+        if(page === INITIAL_PAGE) return
+        setLoadingNextPage(true);
+        getGifs({keyword, adultMode, page})
+        .then(nextGifs =>{
+            setGifs(prevGifs=>prevGifs.concat(nextGifs))
+            setLoadingNextPage(false);
+        }
+        )
+    }, [keyword, adultMode, page, setGifs])
+
+    return { loading, loadingNextPage, gifs, keyword , setPage};
 }
+
+

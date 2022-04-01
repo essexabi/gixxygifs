@@ -20,7 +20,9 @@ export default function Category({ params }) {
         <div className="Category">
             <Logo />
             <h1 className="Category-title">{name}</h1>
+
             <div className="Category-list">
+
                 {category.subcategories.map((subcategory) => (
                     
                     <Subcategory name={subcategory.name} />

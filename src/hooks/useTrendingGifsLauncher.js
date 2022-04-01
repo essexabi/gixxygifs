@@ -5,9 +5,12 @@ import GifContext from "context/GifContext";
 
 import getTrendingGifs from "services/getTrendingGifs";
 
+const INITIAL_PAGE = 0;
 export default function useTrendingGifsLauncher(){
 
     const [loading, setLoading] = useState(false);
+    const [loadingNextPage, setLoadingNextPage] = useState(false);
+    const [page, setPage] = useState(INITIAL_PAGE);
     const {gifs, setGifs} = useContext(GifContext);
     const {adultMode} = useContext(ModeContext);
 
@@ -20,6 +23,20 @@ export default function useTrendingGifsLauncher(){
         });
     }, [adultMode, setGifs]);
 
-    return {loading, gifs}
+    useEffect(()=>{
+        
+        if(page === INITIAL_PAGE) return
+        setLoadingNextPage(true);
+        getTrendingGifs({adultMode, page})
+        .then(nextGifs =>{
+            setGifs(prevGifs=>prevGifs.concat(nextGifs))
+            setLoadingNextPage(false);
+        }
+        )
+    }, [adultMode, page, setGifs])
+
+    
+
+    return {loading, loadingNextPage, setPage,  gifs}
 
 }

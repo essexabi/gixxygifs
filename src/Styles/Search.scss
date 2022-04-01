@@ -3,25 +3,101 @@
 .Search{
     width: 100%;
     display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-    .ListTitle {
-        padding-top: 180px;
-        text-align: center;
-        width: 80%;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  .GifList{
+    width: 90%;
+    --height: 150px;
+
+  }
+
+  
+
+}
+
+
+@media (min-width: 990px) {
+  .Search {
+      .GifList {
+          --height: 230;
+      }
+
       
-        h1 {
-          font-weight: lighter;
-          font-size: 50px;
-        }
+  }
+
+}
+
+@media (min-width: 936px)and (max-width: 989px) {
+  .Search {
+      .GifList {
+          --height: 220;
+      }
+  }
+
+}
+
+@media (min-width: 886px)and (max-width: 935px) {
+  .Search {
+      .GifList {
+          --height: 210;
+      }
+  }
+
+}
+
+@media (min-width: 830px) and (max-width: 885px) {
+  .Search {
+      .GifList {
+          --height: 200;
+      }
+  }
+
+}
+
+
+@media (min-width: 750px) and (max-width: 829px) {
+
+  .Search {
+      .GifList {
+          --height: 190;
+      }
+  }
+}
+
+@media (min-width: 680px) and (max-width: 749px) {
+
+  .Search {
+      .GifList {
+          --height: 180;
+      }
+  }
+}
+
+@media (max-width: 680px) {
+
+  .Search {
+      .GifList {
+          --height: 140;
+      }
+
+      
+  }
+}
+
+@media (min-width: 641px) {
+  .GifList {
+    width: 94%;
+    .ListTitle{
+      padding-top: 100px!important;
     }
-    
-    @media (min-width: 600px) {
-    
-        .ListTitle {
-            padding-top: 80px;
-        }
-        
-    }
+  }
+
+}
+
+@media (max-width: 640px) {
+  .logo{
+    padding-top: 50px;
+  }
 
 }

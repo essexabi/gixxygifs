@@ -1,0 +1,39 @@
+
+
+.TrendingSearches-title {
+    color: white;
+    font-weight:lighter;
+    text-align: center;
+
+}
+
+.TrendingSearches-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-position:inside;
+    padding-inline-start: 10%;
+    padding-inline-end: 10%;
+    list-style-type:none;
+    line-height: 25px;
+    li{
+        
+            list-style-type: none;
+    }
+
+    
+}
+
+.TrendingSearches-link {
+    color: white;
+    font-size: .8em;
+    padding: .5em;
+    transition: color ease-in .1s;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.TrendingSearches-link:hover {
+    color: tomato;
+}
+
