@@ -2,15 +2,13 @@ import React from "react";
 
 import "Styles/GifList.scss";
 
-import { Link } from "wouter";
 import useGlobalMode from "hooks/useGlobalMode";
 import useGlobalGif from "hooks/useGlobalGif";
-
+import Gif from "components/Gif"
 
 function GifList(props) {
     const gifs = useGlobalGif();
     const adultMode = useGlobalMode();
-    const link = "/gif/";
     return (
         <>
           
@@ -22,18 +20,9 @@ function GifList(props) {
                             style={{ "--ratio": height / width }}
                             key={id}
                         >
-                            <Link to={link.concat(id)} >
-                                <a className="active">
-                                    <img
-                                        loading="lazy"
-                                        className="GifItemImage"
-                                        src={url}
-                                        alt={title}
-                                        key={id+"img"}
 
-                                    />
-                                </a>
-                            </Link>
+                            <Gif id={id} title={title} url={url}/>
+                            
                         </div>
                     
                 ))}

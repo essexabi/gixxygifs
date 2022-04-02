@@ -5,7 +5,7 @@ import "Styles/DetailGif.scss";
 import useGlobalGif from "hooks/useGlobalGif";
 
 import Logo from "components/Logo";
-import Gif from "components/Gif";
+import GifDetail from "components/GifDetail";
 
 export default function Detail({ params }) {
     
@@ -22,7 +22,7 @@ export default function Detail({ params }) {
         <>
             <Logo />
 
-            <Gif {...gif}/>
+            <GifDetail {...gif}/>
            
         </>
     );

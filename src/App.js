@@ -20,8 +20,8 @@ function App() {
             <GifContextProvider>
                 <ModeContextProvider>
                     <NavBar />
-                    <section className="App-content">
-                        <Suspense fallback={null}>
+                    <Suspense fallback={null}>
+                        <section className="App-content">
                             <CategoriesContextProvider>
                                 <Route component={Home} path="/" />
                                 <Route component={Home} path="/home" />
@@ -29,18 +29,15 @@ function App() {
                                     component={Category}
                                     path="/category/:name"
                                 />
-                                <Route
-                                    component={Search}
-                                    path="/search/:keyword"
-                                />
-                                <Route component={Detail} path="/gif/:id" />
                             </CategoriesContextProvider>
-                        </Suspense>
-                    </section>
-
-                    <Footer />
+                            <Route component={Search} path="/search/:keyword" />
+                            <Route component={Detail} path="/gif/:id" />
+                        </section>
+                    </Suspense>
                 </ModeContextProvider>
             </GifContextProvider>
+
+            <Footer />
         </div>
     );
 }

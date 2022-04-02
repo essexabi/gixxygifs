@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useLocation } from "wouter";
 import searchPng from "images/search.png";
 import "Styles/Searcher.scss";
 const Searcher = () => {
     const [keyword, setKeyword] = useState("");
     const [currentPath, toPath]  = useLocation();
-    const handleSubmit = (event) => {
+    const handleSubmit = useCallback((event) => {
         event.preventDefault()
 
         currentPath.includes(`search/`)
         ? toPath(keyword)
         : toPath(`/search/${keyword}`)
-    }
+    }, [currentPath, toPath, keyword])
 
     const handleChange = (event) => {
         setKeyword(event.target.value)
