@@ -25,7 +25,7 @@ export default function Category({ params }) {
 
                 {category.subcategories.map((subcategory) => (
                     
-                    <Subcategory name={subcategory.name} />
+                    <Subcategory name={subcategory.name} onClick={window.scrollTo(0,0)}/>
                       
                 ))}
             </div>
