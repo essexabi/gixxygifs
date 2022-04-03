@@ -22,6 +22,7 @@ export default function Search({ params }) {
      // eslint-disable-next-line react-hooks/exhaustive-deps
     const debounceHandleNextPage = useCallback(
         debounce(() => {
+            if(isNearScreen.once === false) window.scrollTo(0, 0);
             return setPage((prevPage) => prevPage + 1);
         }, 200),
         [setPage]
