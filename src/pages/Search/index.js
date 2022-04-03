@@ -11,7 +11,7 @@ import GifList from "components/GifList";
 import Logo from "components/Logo";
 
 export default function Search({ params }) {
-    window.scroll(0, 0);
+
     const { keyword } = params;
     const { loading, gifs, setPage } = useGifsLauncher({ keyword });
     const externalReference = useRef();
@@ -19,9 +19,7 @@ export default function Search({ params }) {
         externalReference: loading ? null : externalReference,
         once: false,
     });
-
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debounceHandleNextPage = useCallback(
         debounce(() => {
             return setPage((prevPage) => prevPage + 1);
@@ -31,12 +29,14 @@ export default function Search({ params }) {
 
     useEffect(
         function () {
+            
             if (isNearScreen) debounceHandleNextPage();
         },
         [debounceHandleNextPage, isNearScreen]
     );
 
     return (
+
         <div className="Search">
             <Logo />
 

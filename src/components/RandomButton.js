@@ -12,6 +12,7 @@ const RandomButton = () => {
     const [URLTag, SetURLTag] = useState(url);
 
     function randomButtonClick(){
+
         SetURLTag(generateTags());
 
     }
@@ -19,7 +20,7 @@ const RandomButton = () => {
     return (
         <div className="randomButton" onClick={randomButtonClick}>
             <Link to ={URLTag}  >
-                <a className="random">
+                <a className="random" onClick= {window.scrollTo(0, 0)}>
                     <img src={randomPng} alt="random" />
                 </a>
             </Link>

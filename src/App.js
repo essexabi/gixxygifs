@@ -15,6 +15,7 @@ import Footer from "components/Footer";
 const Home = React.lazy(() => import("pages/Home"));
 
 function App() {
+
     return (
         <div className="App">
             <GifContextProvider>
