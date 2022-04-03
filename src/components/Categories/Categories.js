@@ -9,7 +9,7 @@ export default function Categories() {
             <h1 className="Categories-title">Categories</h1>
             {categories.map((category) => (
                 <Link to={"/category/" + category.name} key={category.gif.id}>
-                    <a>
+                    <a onClick={window.scrollTo(0, 0)}>
                         <div
                             className="CategoryLink"
                             style={{
