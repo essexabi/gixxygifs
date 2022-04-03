@@ -11,6 +11,7 @@ import GifList from "components/GifList";
 import Logo from "components/Logo";
 
 export default function Search({ params }) {
+    window.scroll(0, 0);
     const { keyword } = params;
     const { loading, gifs, setPage } = useGifsLauncher({ keyword });
     const externalReference = useRef();
