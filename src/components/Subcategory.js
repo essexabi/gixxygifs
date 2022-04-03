@@ -8,10 +8,11 @@ export default function Subcategory(props) {
     
     return (
         <Link className="Category-link" to={`/search/${props.name}`} key="pprops.name">
-            <a onClick={window.scrollTo(0, 0)}>
+            <a>
                 <div
                     className="Category-item"
                     style={{ "--url": "url('"+ gif[0].url+"')" }}
+                    onClick={window.scrollTo(0,0)}
                 >
                     <h3>{props.name}</h3>
                 </div>
