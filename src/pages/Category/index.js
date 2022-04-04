@@ -1,13 +1,13 @@
 import React from "react";
 
-import { Link } from "wouter";
 import "Styles/Category.scss";
 import useGlobalCategories from "hooks/useGlobalCategories";
 import Logo from "components/Logo";
 import Subcategory from "components/Subcategory";
 
 export default function Category({ params }) {
-    const name = decodeURI(params.name);
+    const name = decodeURI(params.name)
+
     const categories = useGlobalCategories();
     const category = categories.find((category) => category.name === name);
 

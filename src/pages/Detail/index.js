@@ -8,14 +8,20 @@ import Logo from "components/Logo";
 import GifDetail from "components/GifDetail";
 
 export default function Detail({ params }) {
-    
-
     const gifs = useGlobalGif();
-
-
-    const gif = gifs.find((gif) => gif.id === params.id);
     
-    window.scrollTo(0, 0);
+
+
+    useEffect(()=>{
+
+        window.scrollTo(0, 0);
+
+        const gif = gifs.find((gif) => gif.id === params.id);
+
+        return gif;
+    
+    }, [gifs, params.id])
+    
 
     
     return (
