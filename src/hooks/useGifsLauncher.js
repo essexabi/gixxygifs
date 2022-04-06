@@ -5,37 +5,40 @@ import ModeContext from "context/ModeContext";
 import GifContext from "context/GifContext";
 
 const INITIAL_PAGE = 0;
-export function useGifsLauncher({ keyword }) {
+export function useGifsLauncher({ keyword } = {keyword: null}) {
     const [loading, setLoading] = useState(false);
     const [loadingNextPage, setLoadingNextPage] = useState(false);
     const [page, setPage] = useState(INITIAL_PAGE);
     const { gifs, setGifs } = useContext(GifContext);
     const { adultMode } = useContext(ModeContext);
 
+    const keywordToUse = keyword || localStorage.getItem('lastKeyword')
+
     useEffect(() => {
         setLoading(true);
-        getGifs({ keyword, adultMode }).then((gifs) => {
+        getGifs({ keyword: keywordToUse, adultMode }).then((gifs) => {
             setGifs(gifs);
             setLoading(false);
+            localStorage.setItem('lastKeyword', keyword)
         });
 
 
 
-    }, [keyword, adultMode, setGifs]);
+    }, [keyword, keywordToUse, adultMode, setGifs]);
 
     useEffect(()=>{
         
         if(page === INITIAL_PAGE) return
         setLoadingNextPage(true);
-        getGifs({keyword, adultMode, page})
+        getGifs({keyword: keywordToUse, adultMode, page})
         .then(nextGifs =>{
             setGifs(prevGifs=>prevGifs.concat(nextGifs))
             setLoadingNextPage(false);
         }
         )
-    }, [keyword, adultMode, page, setGifs])
+    }, [keywordToUse, adultMode, page, setGifs])
 
-    return { loading, loadingNextPage, gifs, keyword , setPage};
+    return { loading, loadingNextPage, gifs, keyword, setPage};
 }
 
 

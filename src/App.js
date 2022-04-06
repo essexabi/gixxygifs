@@ -18,8 +18,9 @@ function App() {
 
     return (
         <div className="App">
-            <GifContextProvider>
                 <ModeContextProvider>
+            <GifContextProvider>
+
                     <NavBar />
                     <Suspense fallback={null}>
                         <section className="App-content">
@@ -35,8 +36,9 @@ function App() {
                             <Route component={Detail} path="/gif/:id" />
                         </section>
                     </Suspense>
-                </ModeContextProvider>
             </GifContextProvider>
+
+                </ModeContextProvider>
 
             <Footer />
         </div>

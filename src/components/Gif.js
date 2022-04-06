@@ -1,12 +1,9 @@
 import React from "react";
-import { Link } from "wouter";
 
 function Gif(props) {
-    const link = "/gif/";
     const randomId = props.id + Math.floor(Math.random() * (99 - 1)) + 1;
     return (
-        <Link to={link.concat(props.id)}>
-            <a className="active">
+        
                 <img
                     loading="lazy"
                     className="GifItemImage"
@@ -14,8 +11,7 @@ function Gif(props) {
                     alt={props.title}
                     key={randomId}
                 />
-            </a>
-        </Link>
+           
     );
 }
 

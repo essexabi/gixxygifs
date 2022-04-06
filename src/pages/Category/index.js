@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import "Styles/Category.scss";
 import useGlobalCategories from "hooks/useGlobalCategories";
@@ -9,12 +9,25 @@ export default function Category({ params }) {
     const name = decodeURI(params.name)
 
     const categories = useGlobalCategories();
-    const category = categories.find((category) => category.name === name);
 
-    //console.log(name)
-    //console.log(categories)
-    //console.log(category)
-    window.scrollTo(0, 0);
+    const categorySubs = categories.find((category) => category.name === name);
+
+    const storedSubcategories = localStorage.getItem("subcategories");
+
+    const subcategoriesCache = categorySubs || JSON.parse(storedSubcategories);
+
+    const [subcategories, setSubcategories] = useState(subcategoriesCache);
+    
+    useEffect(()=>{
+    
+        window.scrollTo(0, 0);
+
+        setSubcategories(subcategories);
+        
+
+        localStorage.setItem("subcategories", JSON.stringify(subcategories));
+
+    }, [subcategories])
 
     return (
         <div className="Category">
@@ -23,9 +36,9 @@ export default function Category({ params }) {
 
             <div className="Category-list">
 
-                {category.subcategories.map((subcategory) => (
+                {subcategoriesCache.subcategories.map((subcategory) => (
                     
-                    <Subcategory name={subcategory.name}/>
+                    <Subcategory key={subcategory.name} name={subcategory.name}/>
                       
                 ))}
             </div>
