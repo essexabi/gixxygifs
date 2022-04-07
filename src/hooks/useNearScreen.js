@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function useNearScreen({distance="90%", externalReference,
+export default function useNearScreen({distance="200px, 0px, 0px, 0px", externalReference,
 once = true} = {}) {
     const [isNearScreen, setLoad] = useState(false);
     const reference = useRef();
@@ -32,7 +32,8 @@ once = true} = {}) {
                 : import("intersection-observer")
         ).then(() => {
             observer = new IntersectionObserver(onChange, {
-                rootMargin: distance
+                rootMargin: distance,
+                threshold: 0.2
             });
             if(element) observer.observe(element);
         });
