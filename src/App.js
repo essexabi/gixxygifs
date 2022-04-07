@@ -34,6 +34,7 @@ function App() {
                             </CategoriesContextProvider>
                             <Route component={Search} path="/search/:keyword" />
                             <Route component={Detail} path="/gif/:id" />
+                            <Route component={()=><h1>404 ERROR</h1>} path="/404"/>
                         </section>
                     </Suspense>
             </GifContextProvider>

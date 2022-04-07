@@ -7,14 +7,24 @@ import GifList from "components/GifList";
 import TrendingSearches from "components/TrendingSearches";
 import Categories from "components/Categories";
 import Logo from "components/Logo";
+import { Helmet } from "react-helmet";
 export default function Home() {
+    // useSEO({
+    //     description: "GixxyGifs is a gif searcher that helps you to find gifs easily. Navigate over the categories section or choose a gif among the trending gifs.",
+    //     title: "Home",
+    // });
     const { loading, gifs, setPage } = useTrendingGifsLauncher();
-    const handleNextPage=() => setPage( prevPage => prevPage + 1 );
-
-
+    const handleNextPage = () => setPage((prevPage) => prevPage + 1);
 
     return (
         <div className="Home">
+            <Helmet>
+                <title>Home | GixxyGifs</title>
+                <meta
+                    name="description"
+                    content="GixxyGifs is a gif searcher that helps you to find gifs easily. Navigate over the categories section or choose a gif among the trending gifs."
+                />
+            </Helmet>
             <TrendingSearches />
             <Logo />
 
@@ -31,7 +41,7 @@ export default function Home() {
                     </>
                 )}
                 <div className="pagination">
-                <button onClick={handleNextPage}>GIF me more!</button>
+                    <button onClick={handleNextPage}>GIF me more!</button>
                 </div>
             </div>
             <div className="SearchAndCategories">

@@ -1,36 +1,34 @@
-import React, { useEffect, useState} from "react";
+import React from "react";
 
 import "Styles/DetailGif.scss";
 
-import useGlobalGif from "hooks/useGlobalGif";
+import useDetail from "hooks/useDetail";
 import Logo from "components/Logo";
 import GifDetail from "components/GifDetail";
+import LoadSpinner from "components/LoadSpinner";
+import { Redirect } from "wouter";
+//import useSEO from "hooks/useSEO";
+import { Helmet } from "react-helmet";
 
 export default function Detail({ params }) {
-    const  gifs = useGlobalGif();
+    const { gif, loading, isError } = useDetail(params.id);
 
-    const singleGif = gifs.find((gif) => gif.id === params.id);
-
-    const storedGif = localStorage.getItem("gif");
-
-    const gifCache =  singleGif || JSON.parse(storedGif);
-
-    const [gif, setGif] = useState(gifCache);
-
-    useEffect(() => {
-
-        window.scrollTo(0, 0);
-
-        setGif(gif);
-
-        localStorage.setItem("gif", JSON.stringify(gif));
-        
-    }, [gif]);
-
+    const title = gif ? gif.title : "";
+    //useSEO({ description: `Detail of ${title} GIF`, title: title });
     return (
         <div className="DetailGif">
+            <Helmet>
+                <title>{title} | GixxyGifs</title>
+                <meta name="description" content={`Detail of ${title} GIF`} />
+            </Helmet>
             <Logo />
-            <GifDetail {...gif} />
+            {loading ? (
+                <LoadSpinner />
+            ) : isError ? (
+                <Redirect to="404" />
+            ) : !gif ? null : (
+                <GifDetail {...gif} />
+            )}
         </div>
     );
 }
