@@ -28,6 +28,8 @@ function GifList(props) {
                     </Link>
                 </div>
             ))}
+
+
         </>
     );
 }
